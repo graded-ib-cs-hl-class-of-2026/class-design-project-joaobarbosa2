@@ -87,18 +87,6 @@ public class InterfaceHandler {
 
             clearConsole();
 
-            // String commandCombined1;
-            // String commandCombined2;
-
-            // boolean hasSpace = command.contains(" ");
-
-            // if (command.contains(" ")) {
-            // commandCombined1 = command.split(" ")[0];
-            // commandCombined2 = command.split(" ")[1];
-
-            // hasSpace = true;
-            // }
-
             System.out.println("\n--------------------------------\n");
 
             String deckName;

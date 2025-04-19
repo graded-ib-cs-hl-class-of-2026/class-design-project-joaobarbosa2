@@ -47,11 +47,17 @@ public class Deck {
         return flashcardsStudied;
     }
 
+    /**
+     * Increments the number of flashcards studied by 1
+     */
     public void studyCard() {
         flashcardsStudied++;
         ioHandler.editFileLine("decks/" + name + ".deck", 4, flashcardsStudied + "");
     }
 
+    /**
+     * Reset the number of flashcards studied to 0
+    */
     public void resetFlashcardsStudied() {
         this.seed = Math.random();
         IOHandler ioHandler = new IOHandler();
@@ -60,6 +66,10 @@ public class Deck {
         ioHandler.editFileLine("decks/" + name + ".deck", 4, flashcardsStudied + "");
     }
 
+    /**
+     * Get the seed of the deck
+     * @return double
+     */
     public double getSeed() {
         return seed;
     }
@@ -98,11 +108,17 @@ public class Deck {
         cards.add(card);
     }
 
+    /**
+     * Get cards from deck
+     * @return ArrayList<Card>
+     */
     public ArrayList<Card> getCards() {
         return cards;
     }
 
-    // Display all the cards in the deck
+    /** 
+     * Display all the cards in the deck
+     */
     public void displayCards() {
         // Needed refresher on how to use the for-each loop
         // https://www.w3schools.com/java/java_foreach_loop.asp
@@ -111,7 +127,9 @@ public class Deck {
         }
     }
 
-    // Interface for adding new cards functionality -> Prompts users for term and definition until /quit
+    /**
+     * Interface for adding new cards functionality -> Prompts users for term and definition until /quit
+     */
     public void addCardsFunction() {
         InterfaceHandler interfaceHandler = new InterfaceHandler();
 

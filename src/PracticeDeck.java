@@ -11,6 +11,7 @@ public class PracticeDeck {
     // Shuffle the deck and return a copy of it
     public ArrayList<Card> shuffleDeckCopy(Deck deck, double seed) {
         // Make a copy of list of cards in the deck
+        // https://www.w3schools.com/java/java_arraylist.asp
         ArrayList<Card> deckCopy = new ArrayList<>(deck.getCards());
 
         // Set the seed for the random number generator
@@ -57,6 +58,9 @@ public class PracticeDeck {
 
         while (!quit) {
             counter++;
+            // Check if the user has studied all the cards in the deck
+            // deckCopy.size() from:
+            // https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Java-array-size-explained-by-example#:~:text=To%20get%20the%20size%20of%20a%20Java%20array%2C%20you%20use,the%20String's%20length()%20method.
             if (counter >= deckCopy.size()) {
                 System.out.println("▶ No more cards in the deck. Exiting practice mode.");
                 deck.resetFlashcardsStudied();
@@ -67,6 +71,7 @@ public class PracticeDeck {
             //     quit = true;
             // } else {
 
+            // Hashmap.get() and other functionalities from https://www.w3schools.com/java/java_ref_hashmap.asp
             Card currentCard = deckCopy.get(counter);
 
             int termLength = currentCard.getTerm().length() + 4;
@@ -80,6 +85,7 @@ public class PracticeDeck {
             System.out.print("\u001B[34m");
             System.out.println("╭" + bar.repeat(termLength) + "╮");
             System.out.println("│  " + currentCard.getTerm() + "  │");
+            // String.repeat() method https://www.w3schools.com/java/java_ref_hashmap.asp
             String userInput = interfaceHandler.input("╰" + bar.repeat(termLength) + "╯");
             System.out.print("\u001B[0m");
 

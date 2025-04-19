@@ -51,6 +51,7 @@ public class DeckHandler {
                     if (line.equals("")) {
                         continue;
                     }
+                    // Split the line into term and definition -- very similar from Python / JS code
                     String[] parts = line.split("\\|\\|\\|");
                     if (parts.length != 2) {
                         System.out.println("Invalid line format: " + line);
